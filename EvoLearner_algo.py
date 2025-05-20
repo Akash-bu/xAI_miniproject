@@ -7,7 +7,7 @@ from owlapy.class_expression import OWLClass
 from ontolearn.metrics import F1, Accuracy
 from ontolearn.utils.static_funcs import verbalize
 
-with open('id1instance_examples.json') as f:
+with open('id1instance_examples_2005.json') as f:
     settings = json.load(f)
 
 kb = KnowledgeBase(path = settings['data_path'])
@@ -20,18 +20,20 @@ for target_concept, examples in settings['problems'].items():
     print(len(p), '\n\n')
     print(len(n), '\n\n')
 
-    # Ignore owl:Thing to prevent duplicate terminal names
-    ignored_classes = {
-        OWLClass(IRI.create("http://www.w3.org/2002/07/owl#Thing"))
-    }
-    target_kb = kb.ignore_and_copy(ignored_classes=ignored_classes)
+    # # Ignore owl:Thing to prevent duplicate terminal names
+    # ignored_classes = {
+    #     OWLClass(IRI.create("http://www.w3.org/2002/07/owl#Thing"))
+    # }
+    # target_kb = kb.ignore_and_copy(ignored_classes=ignored_classes)
+
+    target_kb = kb
     
 
     print(len(list(target_kb.individuals())))
 
-    print("Individual list:")
-    for i in target_kb.individuals():
-        print(i)
+    # print("Individual list:")
+    # for i in target_kb.individuals():
+    #     print(i)
 
 
     typed_pos = set(map(OWLNamedIndividual, map(IRI.create, p)))
@@ -43,14 +45,14 @@ for target_concept, examples in settings['problems'].items():
 
     model.fit(lp, verbose = False)
 
-    model.save_best_hypothesis(n = 5, path = 'Predictions_{0}'.format(target_concept))
+    model.save_best_hypothesis(n = 3, path = 'Predictions_{0}'.format(target_concept))
 
-    hypotheses = list(model.best_hypotheses(n = 5))
+    hypotheses = list(model.best_hypotheses(n = 3))
 
     all_individual = list(typed_pos.union(typed_neg))
 
-    predictions = model.predict(individuals = all_individuals, hypotheses = hypotheses)
+    predictions = model.predict(individuals = all_individual, hypotheses = hypotheses)
 
-    [print(_) for _ in hypotheses]
+    # [print(_) for _ in hypotheses]
 
-# verbalize()
+    print(predictions)

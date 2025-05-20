@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1745785271852" name="file:///home/iamroot/dev2d/new/EDGE/data/aifb-hetero_82d021d8/aifbfixed_complete.n3" uri="KG/aifb.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1745785271852" name="https://dice-research.org/predictions/1745710122.449129" uri="Predictions_id1instance%23.owl"/>
+    </group>
+</catalog>

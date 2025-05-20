@@ -7,7 +7,7 @@ import json
 g = Graph()
 g.parse('aifbfixed_complete.n3', format='n3')
 
-g.serialize(destination='aifb.owl', format = 'xml')
+g.serialize(destination='aifb_2005.owl', format = 'xml')
 
 person_type = URIRef("http://swrc.ontoware.org/ontology#Person")
 people = set(s for s, p, o in g.triples((None, RDF.type, person_type)))
@@ -62,7 +62,7 @@ data = {
     }
 }
 
-with open('id1instance_examples.json', 'w') as f:
+with open('id1instance_examples_2005.json', 'w') as f:
     json.dump(data, f, indent = 2)
 
 print('Done!')

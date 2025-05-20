@@ -1,5 +1,6 @@
 {
-  "data_path": "D:/xAI_miniproject/KG/aifb.owl",
+  "data_path": "/mnt/d/xAI_miniproject/KG/aifb.owl",
+
   "problems": {
   "id1instance": {
     "positive_examples": [

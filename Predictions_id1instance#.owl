@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="https://dice-research.org/predictions/1747745384.9212937"
+         xmlns="https://dice-research.org/predictions/1747745384.9212937#">
+
+<owl:Ontology rdf:about="https://dice-research.org/predictions/1747745384.9212937">
+  <owl:imports rdf:resource="file:///mnt/d/xAI_miniproject/KG/aifb.owl"/>
+</owl:Ontology>
+
+<owl:Class rdf:about="#Pred_0">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <owl:equivalentClass>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://swrc.ontoware.org/ontology#publication"/>
+      <owl:allValuesFrom rdf:resource="http://swrc.ontoware.org/ontology#Report"/>
+    </owl:Restriction>
+  </owl:equivalentClass>
+</owl:Class>
+
+
+</rdf:RDF>
